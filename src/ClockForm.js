@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./ClockForm.css";
 
 function ClockForm({ addData }) {
   const [formData, setFormData] = useState({
@@ -10,15 +11,31 @@ function ClockForm({ addData }) {
     endColor: "#ff0000"
   });
 
+  const [errors, setErrors] = useState({
+    startTime: "",
+    warnTime: "",
+    endTime: ""
+  });
+
   const handleChange = e => {
     const { name, value } = e.target;
+
     setFormData(oldData => ({ ...oldData, [name]: value }));
   };
 
   const handleSubmit = e => {
     e.preventDefault();
-    addData(formData);
-  }
+
+    // check that starTime < endTime
+    if (formData.endTime <= formData.startTime) {
+      setErrors(oldErrors => ({
+        ...oldErrors,
+        endTime: "End Time must come after Start Time."
+      }));
+    } else {
+      addData(formData);
+    }
+  };
 
   return (
     <div>
@@ -60,9 +77,10 @@ function ClockForm({ addData }) {
             onChange={handleChange}
           />
         </div>
-        <div>
-          <label htmlFor="endTime">End Time</label>
+        <div className={`${errors.endTime ? "error" : ""}`}>
+          <label htmlFor="endTime" className="time">End Time</label>
           <input
+            className="time"
             type="time"
             id="endTime"
             name="endTime"
@@ -77,6 +95,7 @@ function ClockForm({ addData }) {
             value={formData.endColor}
             onChange={handleChange}
           />
+          {errors.endTime && <p>{errors.endTime}</p>}
         </div>
         <input type="submit" value="Create clock!" />
       </form>
