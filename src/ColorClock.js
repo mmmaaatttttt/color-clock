@@ -1,13 +1,12 @@
 import React from "react";
-import ClockForm from "./ClockForm";
 
-function ColorClock(props) {
+function ColorClock({clockData}) {
   return (
     <div>
-      <h1>ColorClock</h1>
-      <ClockForm />
+      <h4>ColorClock</h4>
+      <pre>{JSON.stringify(clockData, null, 2)}</pre>
     </div>
-  );
+  )
 }
 
 export default ColorClock;
