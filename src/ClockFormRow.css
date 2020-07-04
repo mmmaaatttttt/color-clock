@@ -1,0 +1,9 @@
+.ClockFormRow.error .ClockFormRow--time,
+.ClockFormRow.error p {
+  color: red;
+}
+
+.ClockFormRow.error .ClockFormRow--time {
+  border: 1px solid red;
+  border-radius: 2px;
+}

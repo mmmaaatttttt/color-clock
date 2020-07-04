@@ -1,9 +1,0 @@
-.error .time,
-.error p {
-  color: red;
-}
-
-.error input.time {
-  border: 1px solid red;
-  border-radius: 2px;
-}
