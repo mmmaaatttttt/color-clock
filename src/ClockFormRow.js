@@ -7,7 +7,7 @@ function ClockFormRow({ prefix, values, handleChange, title, error = null }) {
     <div>
       <h4 className="ClockFormRow--heading">{title}</h4>
       <div className={`ClockFormRow row ${error ? "error" : ""}`}>
-        <div className="column">
+        <div className="column time">
           <label htmlFor={`${prefix}Time`}>{capitalize(prefix)} Time</label>
           <input
             type="time"
@@ -15,8 +15,8 @@ function ClockFormRow({ prefix, values, handleChange, title, error = null }) {
             name={`${prefix}Time`}
             value={values[0]}
             onChange={handleChange}
-            className="ClockFormRow--time"
           />
+          {error && <span className="error-text">{error}</span>}
         </div>
         <div className="column">
           <label htmlFor={`${prefix}Color`}>{capitalize(prefix)} Color</label>
@@ -28,7 +28,6 @@ function ClockFormRow({ prefix, values, handleChange, title, error = null }) {
             onChange={handleChange}
           />
         </div>
-        {error && <p>{error}</p>}
       </div>
     </div>
   );

@@ -1,11 +1,22 @@
-.ClockFormRow.error .ClockFormRow--time,
-.ClockFormRow.error p {
+.ClockFormRow.error .time {
+  color: red;
+  position: relative;
+}
+
+.ClockFormRow.error .time input {
+  border: 1px solid red;
+  border-radius: 2px;
   color: red;
 }
 
-.ClockFormRow.error .ClockFormRow--time {
-  border: 1px solid red;
-  border-radius: 2px;
+.ClockFormRow.error .time span {
+  color: red;
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: bold;
+  position: absolute;
+  bottom: -5px;
+  right: 10px;
 }
 
 .ClockFormRow--heading {
