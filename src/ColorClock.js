@@ -31,7 +31,7 @@ function ColorClock({
     }, 1000);
 
     return () => clearTimeout(timerId);
-  });
+  }, [startTime, startColor, warningTime, warningColor, endTime, endColor]);
 
   if (timeStrInternal < startTime)
     return (
@@ -43,7 +43,7 @@ function ColorClock({
 
   if (timeStrInternal > endTime) {
     return (
-      <div>
+      <div className="ColorClock" style={{ backgroundColor: endColor }}>
         <p>Time's up! This clock ended at {endTime}.</p>
         <p>Current time: {timeStrDisplay}.</p>
       </div>
