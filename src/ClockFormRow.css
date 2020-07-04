@@ -7,3 +7,8 @@
   border: 1px solid red;
   border-radius: 2px;
 }
+
+.ClockFormRow--heading {
+  text-align: center;
+  margin: 1.5rem 0 0.25rem;
+}

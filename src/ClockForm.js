@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ClockFormRow from "./ClockFormRow";
+import "./ClockForm.css";
 
 function ClockForm({ addData }) {
   const [formData, setFormData] = useState({
@@ -38,28 +39,30 @@ function ClockForm({ addData }) {
   };
 
   return (
-    <div>
-      <h2>ClockForm</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="ClockForm">
+      <form onSubmit={handleSubmit} className="ClockForm--form">
         <ClockFormRow
           prefix="start"
           values={[formData.startTime, formData.startColor]}
           handleChange={handleChange}
           error={errors.startTime}
+          title="When do you want the clock to start?"
         />
         <ClockFormRow
           prefix="warning"
           values={[formData.warningTime, formData.warningColor]}
           handleChange={handleChange}
           error={errors.warningTime}
+          title="When do you want to warn?"
         />
         <ClockFormRow
           prefix="end"
           values={[formData.endTime, formData.endColor]}
           handleChange={handleChange}
           error={errors.endTime}
+          title="When is time up?"
         />
-        <input type="submit" value="Create clock!" />
+        <input type="submit" className="ClockForm--button button" value="Create clock!" />
       </form>
     </div>
   );
