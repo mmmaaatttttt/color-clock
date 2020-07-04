@@ -11,9 +11,8 @@ function ColorClockContainer() {
 
   return (
     <div>
-      <h1>ColorClockContainer</h1>
       {clockData ? (
-        <ColorClock clockData={clockData} />
+        <ColorClock {...clockData} />
       ) : (
         <ClockForm addData={addData} />
       )}
