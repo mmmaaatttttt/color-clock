@@ -42,7 +42,7 @@
 }
 
 .ClockForm--form input:focus {
-  border-color: #2196f3
+  border-color: #2196f3;
 }
 
 .ClockForm--button.button.hidden {
