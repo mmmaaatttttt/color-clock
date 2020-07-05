@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { scaleLinear } from "d3-scale";
-import { timeToNumber, getTime, howLongAgo } from "./utils";
+import ProgressBar from "./ProgressBar";
+import {
+  timeToNumber,
+  getTime,
+  howLongAgo,
+  middleTimeAsPercentage
+} from "./utils";
 import "./ColorClock.css";
 
 function ColorClock({
@@ -47,10 +53,19 @@ function ColorClock({
   }
 
   return (
-    <div className="ColorClock" style={{ backgroundColor: color }}>
+    <div
+      className="ColorClock ColorClock--active"
+      style={{ backgroundColor: color }}
+    >
       <h1>{timeForDisplay}</h1>
+      <ProgressBar
+        gradientPercentage={middleTimeAsPercentage(startTime, warningTime, endTime)}
+        color1={startColor}
+        color2={warningColor}
+        color3={endColor}
+      />
     </div>
   );
 }
 
-export default ColorClock;
+export default React.memo(ColorClock);

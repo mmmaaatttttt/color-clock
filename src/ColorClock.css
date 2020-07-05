@@ -6,8 +6,8 @@
   justify-content: center;
   align-items: center;
   color: white;
-  text-shadow: -0.1px -0.1px 1px #999, 0.1px -0.1px 1px #999,
-    -0.1px 0.1px 1px #999, 0.1px 0.1px 1px #999;
+  text-shadow: -0.1px -0.1px 1px #333, 0.1px -0.1px 1px #333,
+    -0.1px 0.1px 1px #333, 0.1px 0.1px 1px #333;
 }
 
 .ColorClock h1 {
@@ -16,4 +16,14 @@
 
 .ColorClock h4 {
   margin-bottom: 1rem;
+}
+
+.ColorClock--active {
+  justify-content: space-between;
+}
+
+.ColorClock--active::before {
+  content: "";
+  height: 12.4rem;
+  visibility: hidden;
 }
