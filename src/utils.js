@@ -46,7 +46,7 @@ export function getTime() {
 
   return {
     timeForDisplay: newMoment.format("LT"),
-    timeForComparison: newMoment.format("H:mm:ss")
+    timeForComparison: newMoment.format("HH:mm:ss")
   };
 }
 
@@ -57,7 +57,7 @@ export function getTime() {
  * @param {String} time - 24 hour time as a string, e.g. "15:16"
  * @returns {String} English description of how long ago the time was.
  */
-export function howLongAgo(time) {
+export function howLongFromNow(time) {
   const [hour, minutes] = time.split(":").map(Number);
   return moment()
     .startOf("day")

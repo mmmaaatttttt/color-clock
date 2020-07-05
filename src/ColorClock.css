@@ -57,3 +57,12 @@
   border-color: #606c76;
   cursor: pointer;
 }
+
+.ColorClock--early {
+  color: #333;
+  text-shadow: none;
+}
+
+.ColorClock--early p {
+  font-weight: bold;
+}

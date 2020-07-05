@@ -6,7 +6,7 @@ import ProgressBar from "./ProgressBar";
 import {
   timeToNumber,
   getTime,
-  howLongAgo,
+  howLongFromNow,
   middleTimeAsPercentage
 } from "./utils";
 import "./ColorClock.css";
@@ -52,9 +52,12 @@ function ColorClock({
 
   if (timeForComparison < startTime)
     return (
-      <div>
-        <p>This clock will start at {startTime}.</p>
+      <div className="ColorClock ColorClock--early">
+        <p>This clock will start {howLongFromNow(startTime)}.</p>
         <p>Current time: {timeForDisplay}.</p>
+        <div className="ColorClock--icon" onClick={handleReset}>
+          <FontAwesomeIcon icon={faRedo} fixedWidth />
+        </div>
       </div>
     );
 
@@ -62,7 +65,7 @@ function ColorClock({
     return (
       <div className="ColorClock" style={{ backgroundColor: endColor }}>
         <h1>Time's Up!</h1>
-        <h4>This clock ended {howLongAgo(endTime)}.</h4>
+        <h4>This clock ended {howLongFromNow(endTime)}.</h4>
         <h4>Current time: {timeForDisplay}.</h4>
       </div>
     );
