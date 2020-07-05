@@ -65,3 +65,25 @@ export function howLongAgo(time) {
     .add(minutes, "minutes")
     .fromNow();
 }
+
+/**
+ * Calculate time2 as a percentage of the duration between time1 and time3.
+ *
+ * @param {String} time1 - String representation of start time, e.g. "08:00"
+ * @param {String} time2 - String representation of start time, e.g. "08:30"
+ * @param {String} time3 - String representation of start time, e.g. "08:45"
+ * @returns {Number} time2's percentage
+ */
+export function middleTimeAsPercentage(time1, time2, time3) {
+  if (time1 >= time2 || time2 >= time3) {
+    throw new Error(
+      `Times must be provided in increasing order! Received ${time1}, ${time2}, ${time3}`
+    );
+  }
+
+  const [time1Num, time2Num, time3Num] = [time1, time2, time3].map(
+    timeToNumber
+  );
+
+  return (time2Num - time1Num) * 100 / (time3Num - time1Num);
+}
