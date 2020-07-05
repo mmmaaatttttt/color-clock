@@ -9,10 +9,14 @@ function ColorClockContainer() {
     setClockData(formData);
   };
 
+  const reset = () => {
+    setClockData(null);
+  }
+
   return (
     <div>
       {clockData ? (
-        <ColorClock {...clockData} />
+        <ColorClock {...clockData} reset={reset} />
       ) : (
         <ClockForm addData={addData} />
       )}

@@ -17,10 +17,24 @@ function ColorClock({
   endTime,
   startColor,
   warningColor,
-  endColor
+  endColor,
+  reset
 }) {
   const [{ timeForDisplay, timeForComparison }, setTime] = useState(getTime());
   const [color, setColor] = useState(startColor);
+  const [showBar, setShowBar] = useState(true);
+
+  const toggleBar = () => {
+    setShowBar(barState => !barState);
+  };
+
+  const handleReset = () => {
+    const msg =
+      "Are you sure you want to go back? This action can't be undone.";
+    if (window.confirm(msg)) {
+      reset();
+    }
+  };
 
   useEffect(() => {
     const timerId = setInterval(() => {
@@ -62,11 +76,11 @@ function ColorClock({
       <div>
         <h1>{timeForDisplay}</h1>
         <div className="ColorClock--icon-wrapper">
-          <div className="ColorClock--icon">
-            <FontAwesomeIcon icon={faEyeSlash} size="2x" />
+          <div className="ColorClock--icon" onClick={toggleBar}>
+            <FontAwesomeIcon icon={showBar ? faEyeSlash : faEye} fixedWidth />
           </div>
-          <div className="ColorClock--icon">
-            <FontAwesomeIcon icon={faRedo} size="2x" />
+          <div className="ColorClock--icon" onClick={handleReset}>
+            <FontAwesomeIcon icon={faRedo} fixedWidth />
           </div>
         </div>
       </div>
@@ -84,6 +98,7 @@ function ColorClock({
         color1={startColor}
         color2={warningColor}
         color3={endColor}
+        hidden={!showBar}
       />
     </div>
   );
