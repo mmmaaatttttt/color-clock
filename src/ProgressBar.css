@@ -9,6 +9,12 @@
   flex-direction: column;
   justify-content: center;
   margin: 4rem;
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.ProgressBar.hidden {
+  opacity: 0;
 }
 
 .ProgressBar--bar {

@@ -8,14 +8,14 @@ function ProgressBar({
   caretPercentage,
   color1,
   color2,
-  color3
+  color3,
+  hidden
 }) {
   const background = `linear-gradient(
     90deg, ${color1} 0%,${color2} ${gradientPercentage}%, ${color3} 100%
   )`;
-  console.log("%%%", caretPercentage);
   return (
-    <div className="ProgressBar">
+    <div className={`ProgressBar ${hidden ? "hidden" : ""}`}>
       <div className="ProgressBar--bar" style={{ background }}>
         <FontAwesomeIcon
           icon={faCaretUp}
