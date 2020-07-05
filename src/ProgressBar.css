@@ -16,4 +16,13 @@
   margin: 0 2rem;
   border-radius: .2rem;
   border: 0.1rem solid #333;
+  position: relative;
+}
+
+.ProgressBar--caret {
+  color: #333;
+  position: absolute;
+  bottom: -2rem;
+  margin-left: -1rem;
+  transition: left 1s linear;
 }
