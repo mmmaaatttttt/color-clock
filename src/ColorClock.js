@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { scaleLinear } from "d3-scale";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash, faRedo } from "@fortawesome/free-solid-svg-icons";
 import ProgressBar from "./ProgressBar";
 import {
   timeToNumber,
@@ -57,9 +59,28 @@ function ColorClock({
       className="ColorClock ColorClock--active"
       style={{ backgroundColor: color }}
     >
-      <h1>{timeForDisplay}</h1>
+      <div>
+        <h1>{timeForDisplay}</h1>
+        <div className="ColorClock--icon-wrapper">
+          <div className="ColorClock--icon">
+            <FontAwesomeIcon icon={faEyeSlash} size="2x" />
+          </div>
+          <div className="ColorClock--icon">
+            <FontAwesomeIcon icon={faRedo} size="2x" />
+          </div>
+        </div>
+      </div>
       <ProgressBar
-        gradientPercentage={middleTimeAsPercentage(startTime, warningTime, endTime)}
+        caretPercentage={middleTimeAsPercentage(
+          startTime,
+          timeForComparison,
+          endTime
+        )}
+        gradientPercentage={middleTimeAsPercentage(
+          startTime,
+          warningTime,
+          endTime
+        )}
         color1={startColor}
         color2={warningColor}
         color3={endColor}
