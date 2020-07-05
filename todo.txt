@@ -1,3 +1,0 @@
-- form validation
-- ColorClock design / layout
-- routing (for next week)
