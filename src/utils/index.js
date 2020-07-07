@@ -7,6 +7,7 @@ import moment from "moment";
  * @returns {String} Returns the capitalized string.
  */
 export function capitalize(str) {
+  if (!str) return "";
   return str[0].toUpperCase() + str.slice(1);
 }
 
@@ -77,7 +78,7 @@ export function howLongFromNow(time) {
 export function middleTimeAsPercentage(time1, time2, time3) {
   if (time1 >= time2 || time2 >= time3) {
     throw new Error(
-      `Times must be provided in increasing order! Received ${time1}, ${time2}, ${time3}`
+      `Times must be provided in increasing order! Received ${time1}, ${time2}, ${time3}.`
     );
   }
 
@@ -85,5 +86,5 @@ export function middleTimeAsPercentage(time1, time2, time3) {
     timeToNumber
   );
 
-  return (time2Num - time1Num) * 100 / (time3Num - time1Num);
+  return ((time2Num - time1Num) * 100) / (time3Num - time1Num);
 }
