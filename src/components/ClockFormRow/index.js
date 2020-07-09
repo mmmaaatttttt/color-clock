@@ -1,5 +1,5 @@
 import React from "react";
-import { capitalize } from "./utils";
+import { capitalize } from "../../utils";
 import "./ClockFormRow.css";
 
 function ClockFormRow({ prefix, values, handleChange, title, error = null }) {

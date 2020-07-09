@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ClockFormRow from "./ClockFormRow";
+import ClockFormRow from "../ClockFormRow";
 import "./ClockForm.css";
 
 function ClockForm({ addData }) {

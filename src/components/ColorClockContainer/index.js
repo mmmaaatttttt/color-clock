@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import ClockForm from "./ClockForm";
-import ColorClock from "./ColorClock";
+import ClockForm from "../ClockForm";
+import ColorClock from "../ColorClock";
 
 function ColorClockContainer() {
   const [clockData, setClockData] = useState(null);

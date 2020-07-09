@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { scaleLinear } from "d3-scale";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash, faRedo } from "@fortawesome/free-solid-svg-icons";
-import ProgressBar from "./ProgressBar";
+import ProgressBar from "../ProgressBar";
 import {
   timeToNumber,
   getTime,
   howLongFromNow,
   middleTimeAsPercentage
-} from "./utils";
+} from "../../utils";
 import "./ColorClock.css";
 
 function ColorClock({

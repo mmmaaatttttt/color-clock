@@ -1,5 +1,5 @@
 import React from 'react';
-import ColorClockContainer from "./ColorClockContainer";
+import ColorClockContainer from "../ColorClockContainer";
 
 function App() {
   return (
