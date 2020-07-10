@@ -11,4 +11,9 @@ describe("basic ClockFormRow tests", function () {
     const { asFragment } = render(<ClockFormRow />);
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it("matches snapshot with errors", function () {
+    const { asFragment } = render(<ClockFormRow error="this is an error." />);
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
