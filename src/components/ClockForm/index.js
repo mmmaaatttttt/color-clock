@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import ClockFormRow from "../ClockFormRow";
+import { encodeToUrl } from "../../utils/routes";
 import "./ClockForm.css";
 
-function ClockForm({ addData }) {
+function ClockForm() {
+  const history = useHistory();
   const [formData, setFormData] = useState({
     startTime: "",
     warningTime: "",
@@ -41,7 +44,18 @@ function ClockForm({ addData }) {
     e.preventDefault();
     const noErrors = Object.values(errors).every(err => err === "");
     if (noErrors) {
-      addData(formData);
+      const colors = [
+        formData.startColor,
+        formData.warningColor,
+        formData.endColor
+      ];
+      const times = [
+        formData.startTime,
+        formData.warningTime,
+        formData.endTime
+      ];
+      const clockId = encodeToUrl({ colors, times });
+      history.push(`/clocks/${clockId}`);
     }
   };
 
