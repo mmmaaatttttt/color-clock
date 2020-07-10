@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useParams, useHistory } from "react-router-dom";
 import { scaleLinear } from "d3-scale";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash, faRedo } from "@fortawesome/free-solid-svg-icons";
@@ -9,17 +10,15 @@ import {
   howLongFromNow,
   middleTimeAsPercentage
 } from "../../utils";
+import { decodeFromUrl } from "../../utils/routes";
 import "./ColorClock.css";
 
-function ColorClock({
-  startTime = "09:00",
-  warningTime = "10:00",
-  endTime = "11:00",
-  startColor = "#ff0000",
-  warningColor = "#ffff00",
-  endColor = "#00ff00",
-  reset
-}) {
+function ColorClock() {
+  const { clockId } = useParams();
+  const history = useHistory();
+  const { colors, times } = decodeFromUrl(clockId);
+  const [startTime, warningTime, endTime] = times;
+  const [startColor, warningColor, endColor] = colors;
   const [{ timeForDisplay, timeForComparison }, setTime] = useState(getTime());
   const [color, setColor] = useState(startColor);
   const [showBar, setShowBar] = useState(true);
@@ -32,7 +31,7 @@ function ColorClock({
     const msg =
       "Are you sure you want to go back? This action can't be undone.";
     if (window.confirm(msg)) {
-      reset();
+      history.push("/");
     }
   };
 
