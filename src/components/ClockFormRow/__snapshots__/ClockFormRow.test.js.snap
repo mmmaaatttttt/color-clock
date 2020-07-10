@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`basic ClockFormRow tests matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <h4
+      class="ClockFormRow--heading"
+    >
+      ClockFormRow
+    </h4>
+    <div
+      class="ClockFormRow row "
+    >
+      <div
+        class="column time"
+      >
+        <label
+          for="startTime"
+        >
+          Start Time
+        </label>
+        <input
+          id="startTime"
+          name="startTime"
+          type="time"
+          value="00:00"
+        />
+      </div>
+      <div
+        class="column"
+      >
+        <label
+          for="startColor"
+        >
+          Start Color
+        </label>
+        <input
+          id="startColor"
+          name="startColor"
+          type="color"
+          value="#000000"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

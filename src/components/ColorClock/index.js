@@ -12,12 +12,12 @@ import {
 import "./ColorClock.css";
 
 function ColorClock({
-  startTime,
-  warningTime,
-  endTime,
-  startColor,
-  warningColor,
-  endColor,
+  startTime = "09:00",
+  warningTime = "10:00",
+  endTime = "11:00",
+  startColor = "#ff0000",
+  warningColor = "#ffff00",
+  endColor = "#00ff00",
   reset
 }) {
   const [{ timeForDisplay, timeForComparison }, setTime] = useState(getTime());

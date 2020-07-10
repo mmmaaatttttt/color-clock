@@ -2,7 +2,13 @@ import React from "react";
 import { capitalize } from "../../utils";
 import "./ClockFormRow.css";
 
-function ClockFormRow({ prefix, values, handleChange, title, error = null }) {
+function ClockFormRow({
+  prefix = "start",
+  values = ["00:00", "#000000"],
+  handleChange = () => {},
+  title = "ClockFormRow",
+  error = null
+}) {
   return (
     <div>
       <h4 className="ClockFormRow--heading">{title}</h4>
