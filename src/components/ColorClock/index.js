@@ -67,6 +67,9 @@ function ColorClock({
         <h1>Time's Up!</h1>
         <h4>This clock ended {howLongFromNow(endTime)}.</h4>
         <h4>Current time: {timeForDisplay}.</h4>
+        <div className="ColorClock--icon" onClick={handleReset}>
+          <FontAwesomeIcon icon={faRedo} fixedWidth />
+        </div>
       </div>
     );
   }
