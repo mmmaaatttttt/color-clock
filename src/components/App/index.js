@@ -1,9 +1,9 @@
 import React from 'react';
-import ColorClockContainer from "../ColorClockContainer";
+import Routes from "../Routes";
 
 function App() {
   return (
-    <ColorClockContainer />
+    <Routes />
   );
 }
 

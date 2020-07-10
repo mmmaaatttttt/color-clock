@@ -1,14 +1,14 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import ColorClockContainer from "./";
+import Routes from ".";
 
-describe("basic ColorClockContainer tests", function () {
+describe("basic Routes tests", function () {
   it("renders without crashing", function () {
-    render(<ColorClockContainer />);
+    render(<Routes />);
   });
 
   it("matches snapshot", function () {
-    const { asFragment } = render(<ColorClockContainer />);
+    const { asFragment } = render(<Routes />);
     expect(asFragment()).toMatchSnapshot();
   });
 });
