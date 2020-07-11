@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import FormContext from "../../contexts/FormContext";
 import ClockFormRow from "../ClockFormRow";
 import { encodeToUrl } from "../../utils/routes";
 import "./ClockForm.css";
@@ -63,38 +64,25 @@ function ClockForm() {
     formData.startTime && formData.warningTime && formData.endTime;
 
   return (
-    <div className="ClockForm">
-      <form onSubmit={handleSubmit} className="ClockForm--form">
-        <ClockFormRow
-          prefix="start"
-          values={[formData.startTime, formData.startColor]}
-          handleChange={handleChange}
-          error={errors.startTime}
-          title="When do you want the clock to start?"
-        />
-        <ClockFormRow
-          prefix="warning"
-          values={[formData.warningTime, formData.warningColor]}
-          handleChange={handleChange}
-          error={errors.warningTime}
-          title="When do you want to warn?"
-        />
-        <ClockFormRow
-          prefix="end"
-          values={[formData.endTime, formData.endColor]}
-          handleChange={handleChange}
-          error={errors.endTime}
-          title="When is time up?"
-        />
-        <input
-          type="submit"
-          className={`ClockForm--button button ${
-            timesFilledOut ? "" : "hidden"
-          }`}
-          value="Create clock!"
-        />
-      </form>
-    </div>
+    <FormContext.Provider value={{ handleChange, formData, errors }}>
+      <div className="ClockForm">
+        <form onSubmit={handleSubmit} className="ClockForm--form">
+          <ClockFormRow
+            prefix="start"
+            title="When do you want the clock to start?"
+          />
+          <ClockFormRow prefix="warning" title="When do you want to warn?" />
+          <ClockFormRow prefix="end" title="When is time up?" />
+          <input
+            type="submit"
+            className={`ClockForm--button button ${
+              timesFilledOut ? "" : "hidden"
+            }`}
+            value="Create clock!"
+          />
+        </form>
+      </div>
+    </FormContext.Provider>
   );
 }
 

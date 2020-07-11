@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { capitalize } from "../../utils";
 import "./ClockFormRow.css";
+import FormContext from "../../contexts/FormContext";
 
 function ClockFormRow({
   prefix = "start",
-  values = ["00:00", "#000000"],
-  handleChange = () => {},
   title = "ClockFormRow",
-  error = null
 }) {
+  const { handleChange, formData, errors } = useContext(FormContext);
+  const error = errors[`${prefix}Time`];
+  const timeVal = formData[`${prefix}Time`];
+  const colorVal = formData[`${prefix}Color`];
   return (
     <div>
       <h4 className="ClockFormRow--heading">{title}</h4>
@@ -19,7 +21,7 @@ function ClockFormRow({
             type="time"
             id={`${prefix}Time`}
             name={`${prefix}Time`}
-            value={values[0]}
+            value={timeVal}
             onChange={handleChange}
           />
           {error && <span className="error-text">{error}</span>}
@@ -30,7 +32,7 @@ function ClockFormRow({
             type="color"
             id={`${prefix}Color`}
             name={`${prefix}Color`}
-            value={values[1]}
+            value={colorVal}
             onChange={handleChange}
           />
         </div>
