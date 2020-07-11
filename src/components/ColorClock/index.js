@@ -19,7 +19,10 @@ function ColorClock() {
   const { colors, times } = decodeFromUrl(clockId);
   const [startTime, warningTime, endTime] = times;
   const [startColor, warningColor, endColor] = colors;
-  const [{ timeForDisplay, timeForComparison }, setTime] = useState(getTime());
+  const [
+    { currentTimeForDisplay, currentTimeForComparison },
+    setTime
+  ] = useState(getTime());
   const [color, setColor] = useState(startColor);
   const [showBar, setShowBar] = useState(true);
 
@@ -43,29 +46,29 @@ function ColorClock() {
 
       const newTime = getTime();
       setTime(newTime);
-      setColor(colorScale(timeToNumber(newTime.timeForComparison)));
+      setColor(colorScale(timeToNumber(newTime.currentTimeForComparison)));
     }, 1000);
 
     return () => clearTimeout(timerId);
   }, [startTime, startColor, warningTime, warningColor, endTime, endColor]);
 
-  if (timeForComparison < startTime)
+  if (currentTimeForComparison < startTime)
     return (
       <div className="ColorClock ColorClock--early">
         <p>This clock will start {howLongFromNow(startTime)}.</p>
-        <p>Current time: {timeForDisplay}.</p>
+        <p>Current time: {currentTimeForDisplay}.</p>
         <div className="ColorClock--icon" onClick={handleReset}>
           <FontAwesomeIcon icon={faRedo} fixedWidth />
         </div>
       </div>
     );
 
-  if (timeForComparison > endTime) {
+  if (currentTimeForComparison > endTime) {
     return (
       <div className="ColorClock" style={{ backgroundColor: endColor }}>
         <h1>Time's Up!</h1>
         <h4>This clock ended {howLongFromNow(endTime)}.</h4>
-        <h4>Current time: {timeForDisplay}.</h4>
+        <h4>Current time: {currentTimeForDisplay}.</h4>
         <div className="ColorClock--icon" onClick={handleReset}>
           <FontAwesomeIcon icon={faRedo} fixedWidth />
         </div>
@@ -79,7 +82,7 @@ function ColorClock() {
       style={{ backgroundColor: color }}
     >
       <div>
-        <h1>{timeForDisplay}</h1>
+        <h1>{currentTimeForDisplay}</h1>
         <div className="ColorClock--icon-wrapper">
           <div className="ColorClock--icon" onClick={toggleBar}>
             <FontAwesomeIcon icon={showBar ? faEyeSlash : faEye} fixedWidth />
@@ -92,7 +95,7 @@ function ColorClock() {
       <ProgressBar
         caretPercentage={middleTimeAsPercentage(
           startTime,
-          timeForComparison,
+          currentTimeForComparison,
           endTime
         )}
         gradientPercentage={middleTimeAsPercentage(

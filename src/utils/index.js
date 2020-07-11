@@ -46,8 +46,8 @@ export function getTime() {
   const newMoment = moment();
 
   return {
-    timeForDisplay: newMoment.format("LT"),
-    timeForComparison: newMoment.format("HH:mm:ss")
+    currentTimeForDisplay: newMoment.format("LT"),
+    currentTimeForComparison: newMoment.format("HH:mm:ss")
   };
 }
 
