@@ -6,11 +6,10 @@ import "./ProgressBar.css";
 function ProgressBar({
   gradientPercentage,
   caretPercentage,
-  color1,
-  color2,
-  color3,
+  colors,
   hidden
 }) {
+  const [color1, color2, color3] = colors;
   const background = `linear-gradient(
     90deg, ${color1} 0%,${color2} ${gradientPercentage}%, ${color3} 100%
   )`;
