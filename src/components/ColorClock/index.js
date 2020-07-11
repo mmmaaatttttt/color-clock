@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import React, { useState, useEffect, useCallback } from "react";
+import { useHistory } from "react-router-dom";
 import { scaleLinear } from "d3-scale";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash, faRedo } from "@fortawesome/free-solid-svg-icons";
@@ -10,20 +10,24 @@ import {
   howLongFromNow,
   middleTimeAsPercentage
 } from "../../utils";
-import { decodeFromUrl } from "../../utils/routes";
 import "./ColorClock.css";
 
-function ColorClock() {
-  const { clockId } = useParams();
+function ColorClock({
+  times = ["09:00", "10:00", "11:00"],
+  colors = ["#00ff00", "#ffff00", "#ff0000"]
+}) {
   const history = useHistory();
-  const { colors, times } = decodeFromUrl(clockId);
-  const [startTime, warningTime, endTime] = times;
-  const [startColor, warningColor, endColor] = colors;
+  const colorScale = useCallback(
+    scaleLinear().domain(times.map(timeToNumber)).range(colors).clamp(true),
+    [times, colors]
+  );
   const [
     { currentTimeForDisplay, currentTimeForComparison },
     setTime
   ] = useState(getTime());
-  const [color, setColor] = useState(startColor);
+  const [color, setColor] = useState(
+    colorScale(timeToNumber(currentTimeForComparison))
+  );
   const [showBar, setShowBar] = useState(true);
 
   const toggleBar = () => {
@@ -40,17 +44,16 @@ function ColorClock() {
 
   useEffect(() => {
     const timerId = setInterval(() => {
-      const timeArr = [startTime, warningTime, endTime].map(timeToNumber);
-      const colorArr = [startColor, warningColor, endColor];
-      const colorScale = scaleLinear().domain(timeArr).range(colorArr);
-
       const newTime = getTime();
       setTime(newTime);
       setColor(colorScale(timeToNumber(newTime.currentTimeForComparison)));
     }, 1000);
 
     return () => clearTimeout(timerId);
-  }, [startTime, startColor, warningTime, warningColor, endTime, endColor]);
+  }, [colorScale]);
+
+  const startTime = times[0];
+  const endTime = times[times.length - 1];
 
   if (currentTimeForComparison < startTime)
     return (
@@ -65,7 +68,7 @@ function ColorClock() {
 
   if (currentTimeForComparison > endTime) {
     return (
-      <div className="ColorClock" style={{ backgroundColor: endColor }}>
+      <div className="ColorClock" style={{ backgroundColor: color }}>
         <h1>Time's Up!</h1>
         <h4>This clock ended {howLongFromNow(endTime)}.</h4>
         <h4>Current time: {currentTimeForDisplay}.</h4>
@@ -98,14 +101,8 @@ function ColorClock() {
           currentTimeForComparison,
           endTime
         )}
-        gradientPercentage={middleTimeAsPercentage(
-          startTime,
-          warningTime,
-          endTime
-        )}
-        color1={startColor}
-        color2={warningColor}
-        color3={endColor}
+        gradientPercentage={middleTimeAsPercentage(...times)}
+        colors={colors}
         hidden={!showBar}
       />
     </div>

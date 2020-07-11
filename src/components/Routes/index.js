@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Switch, Route } from "react-router-dom";
 import ClockForm from "../ClockForm";
-import ColorClock from "../ColorClock";
+import ColorClockValidator from "../ColorClockValidator";
 import About from "../About";
 
 function Routes() {
@@ -11,7 +11,7 @@ function Routes() {
         <ClockForm />
       </Route>
       <Route exact path="/clocks/:clockId">
-        <ColorClock />
+        <ColorClockValidator />
       </Route>
       <Route exact path="/about">
         <About />
