@@ -1,0 +1,39 @@
+.About {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  flex-direction: column;
+  margin: 2rem;
+}
+
+.About h2 {
+  margin: 0 auto 2rem;
+}
+
+.red {
+  background-color: #ff0000;
+  color: white;
+}
+
+.green {
+  background-color: #00ff00;
+}
+
+.yellow {
+  background-color: #ffff00;
+}
+
+.About p,
+.About li {
+  font-size: 1.75rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 1.2rem;
+}
+
+@media (min-width: 80rem) {
+  .About {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
