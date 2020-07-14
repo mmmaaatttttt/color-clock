@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useHistory } from "react-router-dom";
 import { scaleLinear } from "d3-scale";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash, faRedo } from "@fortawesome/free-solid-svg-icons";
 import ProgressBar from "../ProgressBar";
+import Icon from "../Icon";
 import {
   timeToNumber,
   getTime,
@@ -60,9 +60,7 @@ function ColorClock({
       <div className="ColorClock ColorClock--early">
         <p>This clock will start {howLongFromNow(startTime)}.</p>
         <p>Current time: {currentTimeForDisplay}.</p>
-        <div className="ColorClock--icon" onClick={handleReset}>
-          <FontAwesomeIcon icon={faRedo} fixedWidth />
-        </div>
+        <Icon onClick={handleReset} faIcon={faRedo} />
       </div>
     );
 
@@ -72,9 +70,7 @@ function ColorClock({
         <h1>Time's Up!</h1>
         <h4>This clock ended {howLongFromNow(endTime)}.</h4>
         <h4>Current time: {currentTimeForDisplay}.</h4>
-        <div className="ColorClock--icon" onClick={handleReset}>
-          <FontAwesomeIcon icon={faRedo} fixedWidth />
-        </div>
+        <Icon onClick={handleReset} faIcon={faRedo} />
       </div>
     );
   }
@@ -87,12 +83,8 @@ function ColorClock({
       <div>
         <h1>{currentTimeForDisplay}</h1>
         <div className="ColorClock--icon-wrapper">
-          <div className="ColorClock--icon" onClick={toggleBar}>
-            <FontAwesomeIcon icon={showBar ? faEyeSlash : faEye} fixedWidth />
-          </div>
-          <div className="ColorClock--icon" onClick={handleReset}>
-            <FontAwesomeIcon icon={faRedo} fixedWidth />
-          </div>
+          <Icon onClick={toggleBar} faIcon={showBar ? faEyeSlash : faEye} />
+          <Icon onClick={handleReset} faIcon={faRedo} />
         </div>
       </div>
       <ProgressBar

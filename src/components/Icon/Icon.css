@@ -1,0 +1,23 @@
+.Icon {
+  color: #2196f3;
+  background-color: white;
+  border: 2px solid #2196f3;
+  padding: 0.7rem;
+  margin: -1rem 2rem 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+}
+
+.Icon svg {
+  width: 1.25em;
+  height: 1.25em;
+}
+
+.Icon:hover {
+  color: #606c76;
+  border-color: #606c76;
+  cursor: pointer;
+}
