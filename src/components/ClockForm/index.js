@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation, Link } from "react-router-dom";
+import { faQuestion } from "@fortawesome/free-solid-svg-icons";
 import FormContext from "../../contexts/FormContext";
 import ClockFormRow from "../ClockFormRow";
+import Icon from "../Icon";
 import { encodeToUrl } from "../../utils/routes";
 import "./ClockForm.css";
 
 function ClockForm() {
   const history = useHistory();
+  const { state } = useLocation();
+
   const [formData, setFormData] = useState({
     startTime: "",
     warningTime: "",
@@ -56,7 +60,7 @@ function ClockForm() {
         formData.endTime
       ];
       const clockId = encodeToUrl({ colors, times });
-      history.push(`/clocks/${clockId}`);
+      history.push(`/clocks/${clockId}`, { direction: "up" });
     }
   };
 
@@ -65,7 +69,10 @@ function ClockForm() {
 
   return (
     <FormContext.Provider value={{ handleChange, formData, errors }}>
-      <div className="ClockForm">
+      <div className={`ClockForm ${state?.direction === "up" ? "ClockForm-animate-up" : ""}`}>
+        <Link to="/about">
+          <Icon faIcon={faQuestion} />
+        </Link>
         <form onSubmit={handleSubmit} className="ClockForm--form">
           <ClockFormRow
             prefix="start"
@@ -86,4 +93,4 @@ function ClockForm() {
   );
 }
 
-export default ClockForm;
+export default React.memo(ClockForm);

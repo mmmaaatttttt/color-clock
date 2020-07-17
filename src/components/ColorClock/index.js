@@ -38,7 +38,7 @@ function ColorClock({
     const msg =
       "Are you sure you want to go back? This action can't be undone.";
     if (window.confirm(msg)) {
-      history.push("/");
+      history.push("/", { direction: "up" });
     }
   };
 
@@ -64,9 +64,14 @@ function ColorClock({
       </div>
     );
 
+  const colorStyle = {
+    backgroundColor: color,
+    boxShadow: `${color} 0 -5rem 10rem 5rem`
+  };
+
   if (currentTimeForComparison > endTime) {
     return (
-      <div className="ColorClock" style={{ backgroundColor: color }}>
+      <div className="ColorClock" style={colorStyle}>
         <h1>Time's Up!</h1>
         <h4>This clock ended {howLongFromNow(endTime)}.</h4>
         <h4>Current time: {currentTimeForDisplay}.</h4>
@@ -76,10 +81,7 @@ function ColorClock({
   }
 
   return (
-    <div
-      className="ColorClock ColorClock--active"
-      style={{ backgroundColor: color }}
-    >
+    <div className="ColorClock ColorClock--active" style={colorStyle}>
       <div>
         <h1>{currentTimeForDisplay}</h1>
         <div className="ColorClock--icon-wrapper">

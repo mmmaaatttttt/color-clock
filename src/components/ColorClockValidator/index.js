@@ -7,6 +7,7 @@ function ColorClockValidator() {
   const { clockId } = useParams();
 
   const validateId = () => {
+    if (!clockId) return false;
     try {
       const { colors, times } = decodeFromUrl(clockId);
       if (colors.length !== 3 || times.length !== 3) {
@@ -29,7 +30,7 @@ function ColorClockValidator() {
   let validatedObj = validateId();
 
   if (!validatedObj) {
-    return <Redirect to="/" />;
+    return <Redirect to={{ pathname: "/", state: { direction: "up" } }} />;
   }
 
   return <ColorClock {...validatedObj} />;

@@ -1,0 +1,142 @@
+.App {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+@keyframes slidein_about {
+  0% {
+    opacity: 0;
+    transform: translateY(0%);
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes slidein_form_from_clock {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slidein_form_from_about {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slideout_form_to_about {
+  0% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes slideout_about {
+  0% {
+    opacity: 1;
+    transform: translateY(100%);
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+
+@keyframes slideout_form_to_clock {
+  0% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+
+@keyframes slidein_clock {
+  0% {
+    opacity: 0;
+    transform: translateY(200%);
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.page-exit-active .ClockForm {
+  animation: slideout_form_to_about 1000ms forwards;
+}
+
+.page-enter-active .ClockForm {
+  animation: slidein_form_from_about 1000ms forwards;
+}
+
+.page-enter-active .About {
+  animation: slidein_about 1000ms forwards;
+}
+
+.page-exit-active .About  {
+  animation: slideout_about 1000ms forwards;
+}
+
+.page-enter-active .ClockForm.ClockForm-animate-up {
+  animation: slidein_form_from_clock 1000ms forwards;
+}
+
+.page-exit-active .ClockForm.ClockForm-animate-up {
+  animation: slideout_form_to_clock 1000ms forwards;
+}
+
+.page-enter-active .ColorClock { 
+  animation: slidein_clock 1000ms forwards;
+}
