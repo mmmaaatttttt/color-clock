@@ -1,10 +1,13 @@
-import React from 'react';
+import React from "react";
 import Routes from "../Routes";
+import "./App.css";
 
 function App() {
   return (
-    <Routes />
+    <div className="App">
+      <Routes />
+    </div>
   );
 }
 
-export default App;
+export default React.memo(App);
