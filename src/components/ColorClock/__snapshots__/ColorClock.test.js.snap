@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`basic ColorClock tests matches snapshot after the clock is active 1`] = `
+exports[`ColorClock component basic tests matches snapshot after the clock is active 1`] = `
 <DocumentFragment>
   <div
     class="ColorClock"
@@ -39,7 +39,7 @@ exports[`basic ColorClock tests matches snapshot after the clock is active 1`] =
 </DocumentFragment>
 `;
 
-exports[`basic ColorClock tests matches snapshot before the clock is active 1`] = `
+exports[`ColorClock component basic tests matches snapshot before the clock is active 1`] = `
 <DocumentFragment>
   <div
     class="ColorClock ColorClock--early"
@@ -74,7 +74,7 @@ exports[`basic ColorClock tests matches snapshot before the clock is active 1`] 
 </DocumentFragment>
 `;
 
-exports[`basic ColorClock tests matches snapshot while the clock is active 1`] = `
+exports[`ColorClock component basic tests matches snapshot while the clock is active 1`] = `
 <DocumentFragment>
   <div
     class="ColorClock ColorClock--active"
