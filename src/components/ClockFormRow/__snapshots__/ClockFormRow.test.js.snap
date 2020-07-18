@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`basic ClockFormRow tests matches snapshot 1`] = `
+exports[`ClockFormRow component basic tests matches snapshot 1`] = `
 <DocumentFragment>
   <div>
     <h4
@@ -23,7 +23,7 @@ exports[`basic ClockFormRow tests matches snapshot 1`] = `
           id="startTime"
           name="startTime"
           type="time"
-          value="00:00"
+          value=""
         />
       </div>
       <div
@@ -38,7 +38,58 @@ exports[`basic ClockFormRow tests matches snapshot 1`] = `
           id="startColor"
           name="startColor"
           type="color"
-          value="#000000"
+          value="#ff0000"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ClockFormRow component basic tests matches snapshot with errors 1`] = `
+<DocumentFragment>
+  <div>
+    <h4
+      class="ClockFormRow--heading"
+    >
+      ClockFormRow
+    </h4>
+    <div
+      class="ClockFormRow row error"
+    >
+      <div
+        class="column time"
+      >
+        <label
+          for="startTime"
+        >
+          Start Time
+        </label>
+        <input
+          id="startTime"
+          name="startTime"
+          type="time"
+          value=""
+        />
+        <span
+          class="error-text"
+        >
+          This is an error.
+        </span>
+      </div>
+      <div
+        class="column"
+      >
+        <label
+          for="startColor"
+        >
+          Start Color
+        </label>
+        <input
+          id="startColor"
+          name="startColor"
+          type="color"
+          value="#ff0000"
         />
       </div>
     </div>
