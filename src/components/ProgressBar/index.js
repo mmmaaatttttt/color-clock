@@ -14,7 +14,7 @@ function ProgressBar({
     90deg, ${color1} 0%,${color2} ${gradientPercentage}%, ${color3} 100%
   )`;
   return (
-    <div className={`ProgressBar ${hidden ? "hidden" : ""}`}>
+    <div className={`ProgressBar ${hidden ? "hidden" : ""}`} data-testid="ProgressBar">
       <div className="ProgressBar--bar" style={{ background }}>
         <FontAwesomeIcon
           icon={faCaretUp}
