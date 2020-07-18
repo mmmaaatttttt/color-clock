@@ -9,7 +9,7 @@ import ClockForm from "./";
 import App from "../App";
 import { timeMock } from "../../utils/testUtils";
 
-describe("Clockform component", function () {
+describe("ClockForm component", function () {
   describe("basic tests", function () {
     it("renders without crashing", function () {
       render(
