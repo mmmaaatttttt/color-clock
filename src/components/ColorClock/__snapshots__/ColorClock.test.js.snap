@@ -131,6 +131,7 @@ exports[`ColorClock component basic tests matches snapshot while the clock is ac
     </div>
     <div
       class="ProgressBar "
+      data-testid="ProgressBar"
     >
       <div
         class="ProgressBar--bar"

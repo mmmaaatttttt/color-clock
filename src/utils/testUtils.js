@@ -27,7 +27,31 @@ export const timeMock = {
   }
 };
 
-// taken from https://testing-library.com/docs/example-react-router
+/**
+ * Abstraction to allow us to mock calls to the window confirm
+ * function. Returns a setter and a getter. Set to true to accept
+ * the confirm step, set to false to cancel it.
+ */
+export const confirmMock = {
+  set(bool) {
+    this._spy = jest.spyOn(window, "confirm");
+    this._spy.mockImplementation(jest.fn(() => bool));
+  },
+  reset() {
+    this._spy && this._spy.mockRestore();
+  },
+  _spy: null
+};
+
+/**
+ * Helper function to modify the render function in React Testing Library
+ * by wrapping rendered components inside of a router.
+ *
+ * Taken from https://testing-library.com/docs/example-react-router
+ *
+ * @param {Component} component - React component we want to render
+ * @param {Object} param1 - object with route and history keys
+ */
 export function renderWithRouter(
   component,
   {
