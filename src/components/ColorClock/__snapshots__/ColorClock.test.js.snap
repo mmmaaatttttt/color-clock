@@ -4,7 +4,7 @@ exports[`basic ColorClock tests matches snapshot after the clock is active 1`] =
 <DocumentFragment>
   <div
     class="ColorClock"
-    style="background-color: rgb(0, 255, 0);"
+    style="background-color: rgb(255, 0, 0); box-shadow: rgb(255, 0, 0) 0 -5rem 10rem 5rem;"
   >
     <h1>
       Time's Up!
@@ -16,7 +16,7 @@ exports[`basic ColorClock tests matches snapshot after the clock is active 1`] =
       Current time: 2:00 PM.
     </h4>
     <div
-      class="ColorClock--icon"
+      class="Icon"
     >
       <svg
         aria-hidden="true"
@@ -50,7 +50,7 @@ exports[`basic ColorClock tests matches snapshot before the clock is active 1`] 
       Current time: 8:00 AM.
     </p>
     <div
-      class="ColorClock--icon"
+      class="Icon"
     >
       <svg
         aria-hidden="true"
@@ -76,7 +76,7 @@ exports[`basic ColorClock tests matches snapshot while the clock is active 1`] =
 <DocumentFragment>
   <div
     class="ColorClock ColorClock--active"
-    style="background-color: rgb(255, 0, 0);"
+    style="background-color: rgb(255, 255, 0); box-shadow: rgb(255, 255, 0) 0 -5rem 10rem 5rem;"
   >
     <div>
       <h1>
@@ -86,7 +86,7 @@ exports[`basic ColorClock tests matches snapshot while the clock is active 1`] =
         class="ColorClock--icon-wrapper"
       >
         <div
-          class="ColorClock--icon"
+          class="Icon"
         >
           <svg
             aria-hidden="true"
@@ -105,7 +105,7 @@ exports[`basic ColorClock tests matches snapshot while the clock is active 1`] =
           </svg>
         </div>
         <div
-          class="ColorClock--icon"
+          class="Icon"
         >
           <svg
             aria-hidden="true"
