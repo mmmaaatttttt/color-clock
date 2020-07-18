@@ -1,40 +1,25 @@
 import React from "react";
-import {
-  render,
-  fireEvent,
-  waitForElementToBeRemoved
-} from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
+import { fireEvent, waitForElementToBeRemoved } from "@testing-library/react";
 import ClockForm from "./";
 import App from "../App";
-import { timeMock } from "../../utils/testUtils";
+import { timeMock, renderWithRouter } from "../../utils/testUtils";
 
 describe("ClockForm component", function () {
   describe("basic tests", function () {
     it("renders without crashing", function () {
-      render(
-        <MemoryRouter>
-          <ClockForm />
-        </MemoryRouter>
-      );
+      renderWithRouter(<ClockForm />);
     });
 
     it("matches snapshot", function () {
-      const { asFragment } = render(
-        <MemoryRouter>
-          <ClockForm />
-        </MemoryRouter>
-      );
+      const { asFragment } = renderWithRouter(<ClockForm />);
       expect(asFragment()).toMatchSnapshot();
     });
   });
 
   describe("ClockForm state changes", function () {
     it("only shows the button when all times are provided", function () {
-      const { getByLabelText, getByDisplayValue } = render(
-        <MemoryRouter>
-          <ClockForm />
-        </MemoryRouter>
+      const { getByLabelText, getByDisplayValue } = renderWithRouter(
+        <ClockForm />
       );
 
       const time1Input = getByLabelText("Start Time");
@@ -64,11 +49,7 @@ describe("ClockForm component", function () {
     });
 
     it("shows errors if the times are invalid", function () {
-      const { getByLabelText, queryByText } = render(
-        <MemoryRouter>
-          <ClockForm />
-        </MemoryRouter>
-      );
+      const { getByLabelText, queryByText } = renderWithRouter(<ClockForm />);
 
       const warnErrorMsg = "Warning time must be between start and end time.";
       const endErrorMsg = "End time must come after start time.";
@@ -110,10 +91,8 @@ describe("ClockForm component", function () {
 
   describe("Routing from ClockForm", function () {
     it("should go to the about page when clicking on '?'", async function () {
-      const { getAllByRole, getByText, queryByText } = render(
-        <MemoryRouter>
-          <App />
-        </MemoryRouter>
+      const { getAllByRole, getByText, queryByText } = renderWithRouter(
+        <App />
       );
 
       const icon = getAllByRole("button")[0];
@@ -134,11 +113,11 @@ describe("ClockForm component", function () {
     it("should go to a clock page after successful form submit", async function () {
       timeMock.set("13:30");
 
-      const { getByLabelText, getByDisplayValue, queryByText } = render(
-        <MemoryRouter>
-          <App />
-        </MemoryRouter>
-      );
+      const {
+        getByLabelText,
+        getByDisplayValue,
+        queryByText
+      } = renderWithRouter(<App />);
 
       const time1Input = getByLabelText("Start Time");
       const time2Input = getByLabelText("Warning Time");
@@ -163,11 +142,11 @@ describe("ClockForm component", function () {
     it("should stay on the form after trying to submit if there are errors", function () {
       timeMock.set("13:30");
 
-      const { getByLabelText, getByDisplayValue, queryByText } = render(
-        <MemoryRouter>
-          <App />
-        </MemoryRouter>
-      );
+      const {
+        getByLabelText,
+        getByDisplayValue,
+        queryByText
+      } = renderWithRouter(<App />);
 
       const time1Input = getByLabelText("Start Time");
       const time2Input = getByLabelText("Warning Time");
