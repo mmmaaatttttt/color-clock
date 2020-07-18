@@ -17,6 +17,7 @@ exports[`basic ColorClock tests matches snapshot after the clock is active 1`] =
     </h4>
     <div
       class="Icon"
+      role="button"
     >
       <svg
         aria-hidden="true"
@@ -51,6 +52,7 @@ exports[`basic ColorClock tests matches snapshot before the clock is active 1`] 
     </p>
     <div
       class="Icon"
+      role="button"
     >
       <svg
         aria-hidden="true"
@@ -87,6 +89,7 @@ exports[`basic ColorClock tests matches snapshot while the clock is active 1`] =
       >
         <div
           class="Icon"
+          role="button"
         >
           <svg
             aria-hidden="true"
@@ -106,6 +109,7 @@ exports[`basic ColorClock tests matches snapshot while the clock is active 1`] =
         </div>
         <div
           class="Icon"
+          role="button"
         >
           <svg
             aria-hidden="true"

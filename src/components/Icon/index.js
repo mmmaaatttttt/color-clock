@@ -4,7 +4,7 @@ import "./Icon.css";
 
 function Icon({ onClick, faIcon }) {
   return (
-    <div className="Icon" onClick={onClick}>
+    <div className="Icon" onClick={onClick} role="button" >
       <FontAwesomeIcon icon={faIcon} fixedWidth />
     </div>
   );
