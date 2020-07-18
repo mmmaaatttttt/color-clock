@@ -164,6 +164,7 @@ describe("ClockForm component", function () {
       fireEvent.click(submitButton);
 
       // clock doesn't get mounted into the DOM
+      expect(submitButton).toBeInTheDocument();
       expect(queryByText("1:30 PM")).not.toBeInTheDocument();
     });
 
