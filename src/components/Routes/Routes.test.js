@@ -1,14 +1,11 @@
 import React from "react";
-import { render } from "@testing-library/react";
 import Routes from ".";
+import { renderWithRouter } from "../../utils/testUtils";
 
-describe("basic Routes tests", function () {
-  it("renders without crashing", function () {
-    render(<Routes />);
-  });
-
-  it("matches snapshot", function () {
-    const { asFragment } = render(<Routes />);
-    expect(asFragment()).toMatchSnapshot();
+describe("Routes", function () {
+  describe("basic tests", function () {
+    it("renders without crashing", function () {
+      renderWithRouter(<Routes />);
+    });
   });
 });
