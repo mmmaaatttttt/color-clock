@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`basic App tests matches snapshot for a valid clock 1`] = `
+exports[`App component basic tests matches snapshot for a valid clock 1`] = `
 <DocumentFragment>
   <div
     class="App"
@@ -90,7 +90,7 @@ exports[`basic App tests matches snapshot for a valid clock 1`] = `
 </DocumentFragment>
 `;
 
-exports[`basic App tests matches snapshot for about 1`] = `
+exports[`App component basic tests matches snapshot for about 1`] = `
 <DocumentFragment>
   <div
     class="App"
@@ -171,7 +171,7 @@ exports[`basic App tests matches snapshot for about 1`] = `
 </DocumentFragment>
 `;
 
-exports[`basic App tests matches snapshot for the form 1`] = `
+exports[`App component basic tests matches snapshot for the form 1`] = `
 <DocumentFragment>
   <div
     class="App"
