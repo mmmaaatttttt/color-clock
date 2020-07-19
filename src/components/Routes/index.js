@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import ClockForm from "../ClockForm";
 import ColorClockValidator from "../ColorClockValidator";
@@ -43,7 +43,6 @@ function Routes() {
           )}
         </Route>
       ))}
-      <Redirect to="/" />
     </>
   );
 }
