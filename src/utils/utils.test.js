@@ -1,4 +1,3 @@
-import MockDate from "mockdate";
 import {
   capitalize,
   timeToNumber,
@@ -6,7 +5,7 @@ import {
   howLongFromNow,
   middleTimeAsPercentage
 } from ".";
-import { makeTimeStamp } from "./testUtils";
+import { timeMock } from "./testUtils";
 
 describe("utility functions", function () {
   describe("#capitalize", function () {
@@ -75,53 +74,53 @@ describe("utility functions", function () {
 
   describe("#getTime", function () {
     it("correctly generates morning times", function () {
-      MockDate.set(makeTimeStamp("04:12:19"));
+      timeMock.set("04:12:19");
       expect(getTime()).toEqual({
-        timeForDisplay: "4:12 AM",
-        timeForComparison: "04:12:19"
+        currentTimeForDisplay: "4:12 AM",
+        currentTimeForComparison: "04:12:19"
       });
-      MockDate.set(makeTimeStamp("11:30:00"));
+      timeMock.set("11:30:00");
       expect(getTime()).toEqual({
-        timeForDisplay: "11:30 AM",
-        timeForComparison: "11:30:00"
+        currentTimeForDisplay: "11:30 AM",
+        currentTimeForComparison: "11:30:00"
       });
     });
 
-    it("correctly generates afternoon times", function() {
-      MockDate.set(makeTimeStamp("13:59:07"));
+    it("correctly generates afternoon times", function () {
+      timeMock.set("13:59:07");
       expect(getTime()).toEqual({
-        timeForDisplay: "1:59 PM",
-        timeForComparison: "13:59:07"
+        currentTimeForDisplay: "1:59 PM",
+        currentTimeForComparison: "13:59:07"
       });
-      MockDate.set(makeTimeStamp("22:23:11"));
+      timeMock.set("22:23:11");
       expect(getTime()).toEqual({
-        timeForDisplay: "10:23 PM",
-        timeForComparison: "22:23:11"
+        currentTimeForDisplay: "10:23 PM",
+        currentTimeForComparison: "22:23:11"
       });
     });
 
     afterEach(function () {
-      MockDate.reset();
+      timeMock.reset();
     });
   });
 
   describe("#howLongFromNow", function () {
-    it("correctly describes times in the future", function() {
-      MockDate.set(makeTimeStamp("12:00:00"));
+    it("correctly describes times in the future", function () {
+      timeMock.set("12:00:00");
       expect(howLongFromNow("12:03:00")).toEqual("in 3 minutes");
       expect(howLongFromNow("14:00:00")).toEqual("in 2 hours");
       expect(howLongFromNow("23:00:00")).toEqual("in 11 hours");
     });
 
-    it("correctly describes times in the past", function() {
-      MockDate.set(makeTimeStamp("09:30:00"));
+    it("correctly describes times in the past", function () {
+      timeMock.set("09:30:00");
       expect(howLongFromNow("09:29")).toEqual("a minute ago");
       expect(howLongFromNow("09:00")).toEqual("30 minutes ago");
       expect(howLongFromNow("06:15")).toEqual("3 hours ago");
     });
 
     afterEach(function () {
-      MockDate.reset();
+      timeMock.reset();
     });
   });
 });
