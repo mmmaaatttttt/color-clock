@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`basic ProgressBar tests matches snapshot 1`] = `
+exports[`ProgressBar basic tests matches snapshot 1`] = `
 <DocumentFragment>
   <div
     class="ProgressBar "
+    data-testid="ProgressBar"
   >
     <div
       class="ProgressBar--bar"
@@ -15,6 +16,37 @@ exports[`basic ProgressBar tests matches snapshot 1`] = `
         data-prefix="fas"
         focusable="false"
         role="img"
+        style="left: 50%;"
+        viewBox="0 0 320 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z"
+          fill="currentColor"
+        />
+      </svg>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ProgressBar basic tests matches snapshot with different props 1`] = `
+<DocumentFragment>
+  <div
+    class="ProgressBar hidden"
+    data-testid="ProgressBar"
+  >
+    <div
+      class="ProgressBar--bar"
+    >
+      <svg
+        aria-hidden="true"
+        class="svg-inline--fa fa-caret-up fa-w-10 fa-2x ProgressBar--caret"
+        data-icon="caret-up"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style="left: 50%;"
         viewBox="0 0 320 512"
         xmlns="http://www.w3.org/2000/svg"
       >
