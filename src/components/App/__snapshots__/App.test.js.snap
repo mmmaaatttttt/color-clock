@@ -1,6 +1,177 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`basic App tests matches snapshot 1`] = `
+exports[`basic App tests matches snapshot for a valid clock 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <div>
+      <div
+        class="ColorClock ColorClock--active"
+        style="background-color: rgb(128, 255, 0); box-shadow: rgb(128, 255, 0) 0 -5rem 10rem 5rem;"
+      >
+        <div>
+          <h1>
+            10:00 AM
+          </h1>
+          <div
+            class="ColorClock--icon-wrapper"
+          >
+            <div
+              class="Icon"
+              role="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-eye-slash fa-w-20 fa-fw "
+                data-icon="eye-slash"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                viewBox="0 0 640 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M320 400c-75.85 0-137.25-58.71-142.9-133.11L72.2 185.82c-13.79 17.3-26.48 35.59-36.72 55.59a32.35 32.35 0 0 0 0 29.19C89.71 376.41 197.07 448 320 448c26.91 0 52.87-4 77.89-10.46L346 397.39a144.13 144.13 0 0 1-26 2.61zm313.82 58.1l-110.55-85.44a331.25 331.25 0 0 0 81.25-102.07 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64a308.15 308.15 0 0 0-147.32 37.7L45.46 3.37A16 16 0 0 0 23 6.18L3.37 31.45A16 16 0 0 0 6.18 53.9l588.36 454.73a16 16 0 0 0 22.46-2.81l19.64-25.27a16 16 0 0 0-2.82-22.45zm-183.72-142l-39.3-30.38A94.75 94.75 0 0 0 416 256a94.76 94.76 0 0 0-121.31-92.21A47.65 47.65 0 0 1 304 192a46.64 46.64 0 0 1-1.54 10l-73.61-56.89A142.31 142.31 0 0 1 320 112a143.92 143.92 0 0 1 144 144c0 21.63-5.29 41.79-13.9 60.11z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <div
+              class="Icon"
+              role="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-redo fa-w-16 fa-fw "
+                data-icon="redo"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                viewBox="0 0 512 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M500.33 0h-47.41a12 12 0 0 0-12 12.57l4 82.76A247.42 247.42 0 0 0 256 8C119.34 8 7.9 119.53 8 256.19 8.1 393.07 119.1 504 256 504a247.1 247.1 0 0 0 166.18-63.91 12 12 0 0 0 .48-17.43l-34-34a12 12 0 0 0-16.38-.55A176 176 0 1 1 402.1 157.8l-101.53-4.87a12 12 0 0 0-12.57 12v47.41a12 12 0 0 0 12 12h200.33a12 12 0 0 0 12-12V12a12 12 0 0 0-12-12z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ProgressBar "
+          data-testid="ProgressBar"
+        >
+          <div
+            class="ProgressBar--bar"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-caret-up fa-w-10 fa-2x ProgressBar--caret"
+              data-icon="caret-up"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              style="left: 33.333333333333336%;"
+              viewBox="0 0 320 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`basic App tests matches snapshot for about 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <div>
+      <div
+        class="About"
+      >
+        <h2>
+          Make time visible.
+        </h2>
+        <p>
+          For folks who can't tell time and have a hard time with transitions (e.g. small children), color clocks give a clear visual that tells them how close they are to an upcoming transition. Time-telling skills not required.
+        </p>
+        <p>
+          Color clocks smoothly transition between three different phases: start, warning and end. You control what time each phase should start and what each phase should look like.
+        </p>
+        <p>
+          How to make a color clock:
+        </p>
+        <ol>
+          <li>
+            Click 
+            <a
+              href="/"
+            >
+              here
+            </a>
+             to fill out the color clock form.
+          </li>
+          <li>
+            Select a time for the clock to start.
+          </li>
+          <li>
+            Select a color for the start time (defaults to 
+            <span
+              class="green"
+            >
+              green
+            </span>
+            ).
+          </li>
+          <li>
+            Repeat steps 2 and 3 for the warning time and the ending time (colors default to 
+            <span
+              class="yellow"
+            >
+              yellow
+            </span>
+             and 
+            <span
+              class="red"
+            >
+              red
+            </span>
+            , respectively.
+          </li>
+          <li>
+            Click on the button to create your clock.
+          </li>
+          <li>
+            (Optional.) Bookmark the clock page to revisit it any day in the future. The clock will remember the times and colors you selected!
+          </li>
+        </ol>
+        <p>
+          Please note that times must all be for the same calendar day. For example, it's not possible to make a clock that starts at 11:30 PM and ends at 1:00 AM the next day.
+        </p>
+        <p>
+          <a
+            href="/"
+          >
+            Go back
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`basic App tests matches snapshot for the form 1`] = `
 <DocumentFragment>
   <div
     class="App"
