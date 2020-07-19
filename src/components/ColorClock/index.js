@@ -10,11 +10,12 @@ import {
   howLongFromNow,
   middleTimeAsPercentage
 } from "../../utils";
+import { DEFAULT_COLORS } from "../../data/colors";
 import "./ColorClock.css";
 
 function ColorClock({
   times = ["09:00", "10:00", "11:00"],
-  colors = ["#00ff00", "#ffff00", "#ff0000"]
+  colors = DEFAULT_COLORS
 }) {
   const history = useHistory();
   const colorScale = useCallback(
