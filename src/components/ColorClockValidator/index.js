@@ -3,6 +3,12 @@ import { Redirect, useParams } from "react-router-dom";
 import { decodeFromUrl } from "../../utils/routes";
 import ColorClock from "../ColorClock";
 
+/**
+ * Validates if the url parameter for the clock id corresponds
+ * to valid data. Returns the data if the id is valid, otherwise false.
+ * 
+ * @param {String} clockId - id of the clock (taken from the URL)
+ */
 const validateId = (clockId) => {
   try {
     const { colors, times } = decodeFromUrl(clockId);
@@ -23,6 +29,14 @@ const validateId = (clockId) => {
   }
 };
 
+/**
+ * Wrapper around the ColorClock component that performs validation
+ * of the clockId from the URL. If the id is valid, we render
+ * the ColorClock. Otherwise, we redirect to display ClockForm.
+ * 
+ * Props: none
+ * State: none
+ */
 function ColorClockValidator() {
   const { clockId } = useParams();
 

@@ -2,6 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./About.css";
 
+/**
+ * Component for the about page. 
+ * This is a basic presentational component.
+ * 
+ * Props: none
+ * State: none
+ */
 function About() {
   return (
     <div className="About">

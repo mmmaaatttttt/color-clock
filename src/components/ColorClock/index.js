@@ -13,6 +13,22 @@ import {
 import { DEFAULT_COLORS } from "../../data/colors";
 import "./ColorClock.css";
 
+/**
+ * Component for displaying the color clock.
+ * 
+ * Uses an effect to update the color and the progress bar every second.
+ * 
+ * Props:
+ *   - times: String[] - array of three time strings
+ *   - colors: String[] - array of three hex codes
+ * State:
+ *   - currentTime: {
+ *       currentTimeForDisplay: String - time as displayed to the user, e.g. "1:30 PM"
+ *       currentTimeForComparison: String - 24-hour time used for calculations, e.g. "13:30"
+ *     }
+ *   - color: String - hex code for current background color
+ *   - showBar: Boolean - flag to determine whether to show the progress bar
+ */
 function ColorClock({
   times = ["09:00", "10:00", "11:00"],
   colors = DEFAULT_COLORS

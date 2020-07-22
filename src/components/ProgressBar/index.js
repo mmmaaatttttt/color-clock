@@ -4,6 +4,18 @@ import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
 import "./ProgressBar.css";
 import { DEFAULT_COLORS } from "../../data/colors";
 
+/**
+ * Progress bar that displays inside of the ColorClock component.
+ * Useful for seeing how much time has elapsed.
+ * 
+ * Props:
+ *   - gradientPercentage: Number - Represents when the warning time starts
+ *     as a percentage of the clock's total time.
+ *   - caretPercentage: Number - Represents how far the caret should be from the start,
+ *     as a percentage.
+ *   - colors: String[] - Array of color strings (used to make the gradient).
+ *   - hidden: Boolean - Toggles whether the bar is hidden or not.
+ */
 function ProgressBar({
   gradientPercentage = 50,
   caretPercentage = 50,

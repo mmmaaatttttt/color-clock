@@ -23,6 +23,14 @@ const routes = [
   }
 ];
 
+/**
+ * Route component for determine what to display based on the url.
+ * Routes are nested in order to separate the transition effects
+ * from the default redirect behavior when the url is malformed.
+ * 
+ * Props - none
+ * State - none
+ */
 function Routes() {
   routes[0].nodeRef = useRef(null);
   routes[1].nodeRef = useRef(null);

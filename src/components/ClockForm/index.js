@@ -8,6 +8,30 @@ import { encodeToUrl } from "../../utils/routes";
 import { DEFAULT_COLORS } from "../../data/colors";
 import "./ClockForm.css";
 
+/**
+ * Form component for creating a new color clock.
+ * 
+ * Form validates whether the times are in strictly ascending order,
+ * and all three times must be provided in order to submit. 
+ * Upon successful form submit, the user is redirected to the
+ * show page for the newly created clock.
+ * 
+ * Props: none
+ * State: 
+ *   - formData: {
+ *       startTime: String,
+ *       warningTime: String,
+ *       endTime: String,
+ *       startColor: String,
+ *       warningColor: String,
+ *       endColor: String
+ *     }
+ *   - errors: {
+ *       warningTime: String,
+ *       endTime: String,
+ *     }
+ * 
+ */
 function ClockForm() {
   const history = useHistory();
 

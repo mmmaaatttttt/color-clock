@@ -3,6 +3,20 @@ import { capitalize } from "../../utils";
 import "./ClockFormRow.css";
 import FormContext from "../../contexts/FormContext";
 
+/**
+ * Row component for the clock form.
+ * Consists of inputs for time and color.
+ * 
+ * Props: 
+ *   - prefix: String - used to determine which slice of the form state
+ *     should be displayed in the form
+ *   - title: String
+ * State: none
+ * Context:
+ *   - formData: Object - state from ClockForm
+ *   - errors: Object - state from ClockForm
+ *   - handleChange: Function - event handler from ClockForm
+ */
 function ClockFormRow({
   prefix = "start",
   title = "ClockFormRow",
