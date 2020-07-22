@@ -178,7 +178,7 @@ exports[`App component basic tests matches snapshot for the form 1`] = `
   >
     <div>
       <div
-        class="ClockForm "
+        class="ClockForm"
       >
         <a
           href="/about"
