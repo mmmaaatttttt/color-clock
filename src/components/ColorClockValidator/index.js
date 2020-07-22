@@ -32,7 +32,7 @@ function ColorClockValidator() {
   let validatedObj = validateId(clockId);
 
   if (!validatedObj) {
-    return <Redirect to={{ pathname: "/", state: { direction: "up" } }} />;
+    return <Redirect to="/" />;
   }
 
   return <ColorClock {...validatedObj} />;

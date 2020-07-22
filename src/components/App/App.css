@@ -3,13 +3,13 @@
   width: 100vw;
   height: 100vh;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
 }
 
 @keyframes slidein_about {
   0% {
     opacity: 0;
-    transform: translateY(0%);
+    transform: translateY(-100%);
   }
 
   80% {
@@ -17,7 +17,7 @@
   }
 
   100% {
-    transform: translateY(100%);
+    transform: translateY(0%);
   }
 }
 
@@ -39,7 +39,7 @@
 @keyframes slidein_form_from_about {
   0% {
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateY(0%);
   }
 
   80% {
@@ -47,14 +47,14 @@
   }
 
   100% {
-    transform: translateY(0%);
+    transform: translateY(-100%);
   }
 }
 
 @keyframes slideout_form_to_about {
   0% {
     opacity: 1;
-    transform: translateY(0%);
+    transform: translateY(-100%);
   }
 
   80% {
@@ -62,27 +62,11 @@
   }
 
   100% {
-    transform: translateY(100%);
+    transform: translateY(0%);
   }
 }
 
 @keyframes slideout_about {
-  0% {
-    opacity: 1;
-    transform: translateY(100%);
-  }
-
-  80% {
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0%);
-  }
-}
-
-
-@keyframes slideout_form_to_clock {
   0% {
     opacity: 1;
     transform: translateY(0%);
@@ -98,10 +82,26 @@
 }
 
 
+@keyframes slideout_form_to_clock {
+  0% {
+    opacity: 1;
+    transform: translateY(-100%);
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(-200%);
+  }
+}
+
+
 @keyframes slidein_clock {
   0% {
     opacity: 0;
-    transform: translateY(200%);
+    transform: translateY(100%);
   }
 
   80% {
@@ -109,34 +109,34 @@
   }
 
   100% {
-    transform: translateY(100%);
+    transform: translateY(0%);
   }
 }
 
-.page-exit-active .ClockForm {
+.form-exit-active {
   animation: slideout_form_to_about 1000ms forwards;
 }
 
-.page-enter-active .ClockForm {
+.form-enter-active {
   animation: slidein_form_from_about 1000ms forwards;
 }
 
-.page-enter-active .About {
+.about-enter-active {
   animation: slidein_about 1000ms forwards;
 }
 
-.page-exit-active .About  {
+.about-exit-active  {
   animation: slideout_about 1000ms forwards;
 }
 
-.page-enter-active .ClockForm.ClockForm-animate-up {
+.clock-exit-active + .form-enter-active {
   animation: slidein_form_from_clock 1000ms forwards;
 }
 
-.page-exit-active .ClockForm.ClockForm-animate-up {
+.clock-enter-active + .form-exit-active {
   animation: slideout_form_to_clock 1000ms forwards;
 }
 
-.page-enter-active .ColorClock { 
+.clock-enter-active { 
   animation: slidein_clock 1000ms forwards;
 }

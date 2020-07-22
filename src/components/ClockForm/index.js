@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, useLocation, Link } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { faQuestion } from "@fortawesome/free-solid-svg-icons";
 import FormContext from "../../contexts/FormContext";
 import ClockFormRow from "../ClockFormRow";
@@ -10,7 +10,6 @@ import "./ClockForm.css";
 
 function ClockForm() {
   const history = useHistory();
-  const { state } = useLocation();
 
   const [formData, setFormData] = useState({
     startTime: "",
@@ -61,7 +60,7 @@ function ClockForm() {
         formData.endTime
       ];
       const clockId = encodeToUrl({ colors, times });
-      history.push(`/clocks/${clockId}`, { direction: "up" });
+      history.push(`/clocks/${clockId}`);
     }
   };
 
@@ -70,7 +69,7 @@ function ClockForm() {
 
   return (
     <FormContext.Provider value={{ handleChange, formData, errors }}>
-      <div className={`ClockForm ${state?.direction === "up" ? "ClockForm-animate-up" : ""}`}>
+      <div className="ClockForm">
         <Link to="/about">
           <Icon faIcon={faQuestion} />
         </Link>

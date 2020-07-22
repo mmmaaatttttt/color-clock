@@ -7,16 +7,19 @@ import About from "../About";
 
 const routes = [
   {
-    path: "/",
-    Component: ClockForm
-  },
-  {
+    name: "about",
     path: "/about",
     Component: About
   },
   {
+    name: "clock",
     path: "/clocks/:clockId",
     Component: ColorClockValidator
+  },
+  {
+    name: "form",
+    path: "/",
+    Component: ClockForm
   }
 ];
 
@@ -27,13 +30,13 @@ function Routes() {
   return (
     <Switch>
       <Route exact path={routes.map(route => route.path)}>
-        {routes.map(({ path, Component, nodeRef }) => (
+        {routes.map(({ path, Component, nodeRef, name }) => (
           <Route key={path} exact path={path}>
             {({ match }) => (
               <CSSTransition
                 in={match !== null}
                 timeout={1000}
-                classNames="page"
+                classNames={name}
                 unmountOnExit
                 nodeRef={nodeRef}
               >

@@ -39,7 +39,7 @@ function ColorClock({
     const msg =
       "Are you sure you want to go back? This action can't be undone.";
     if (window.confirm(msg)) {
-      history.push("/", { direction: "up" });
+      history.push("/");
     }
   };
 
