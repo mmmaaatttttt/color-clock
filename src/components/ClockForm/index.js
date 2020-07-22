@@ -5,6 +5,7 @@ import FormContext from "../../contexts/FormContext";
 import ClockFormRow from "../ClockFormRow";
 import Icon from "../Icon";
 import { encodeToUrl } from "../../utils/routes";
+import { DEFAULT_COLORS } from "../../data/colors";
 import "./ClockForm.css";
 
 function ClockForm() {
@@ -15,9 +16,9 @@ function ClockForm() {
     startTime: "",
     warningTime: "",
     endTime: "",
-    startColor: "#00ff00",
-    warningColor: "#ffff00",
-    endColor: "#ff0000"
+    startColor: DEFAULT_COLORS[0],
+    warningColor: DEFAULT_COLORS[1],
+    endColor: DEFAULT_COLORS[2]
   });
 
   const [errors, setErrors] = useState({
