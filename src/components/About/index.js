@@ -1,15 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { DEFAULT_COLORS } from "../../data/colors";
 import "./About.css";
 
 /**
- * Component for the about page. 
+ * Component for the about page.
  * This is a basic presentational component.
- * 
+ *
  * Props: none
  * State: none
  */
 function About() {
+  const [green, yellow, red] = DEFAULT_COLORS;
   return (
     <div className="About">
       <h2>Make time visible.</h2>
@@ -32,12 +34,12 @@ function About() {
         <li>Select a time for the clock to start.</li>
         <li>
           Select a color for the start time (defaults to{" "}
-          <span className="green">green</span>).
+          <span style={{ backgroundColor: green }}>green</span>).
         </li>
         <li>
           Repeat steps 2 and 3 for the warning time and the ending time (colors
-          default to <span className="yellow">yellow</span> and{" "}
-          <span className="red">red</span>, respectively.
+          default to <span style={{ backgroundColor: yellow }}>yellow</span> and{" "}
+          <span style={{ backgroundColor: red }}>red</span>, respectively.
         </li>
         <li>Click on the button to create your clock.</li>
         <li>

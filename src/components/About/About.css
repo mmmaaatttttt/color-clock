@@ -11,19 +11,6 @@
   margin: 0 auto 2rem;
 }
 
-.red {
-  background-color: #ff0000;
-  color: white;
-}
-
-.green {
-  background-color: #00ff00;
-}
-
-.yellow {
-  background-color: #ffff00;
-}
-
 .About p,
 .About li {
   font-size: 1.75rem;
