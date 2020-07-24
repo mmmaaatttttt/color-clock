@@ -1,23 +1,22 @@
-import React, { useState, useEffect } from "react";
-import { useHistory, Link } from "react-router-dom";
-import { faQuestion } from "@fortawesome/free-solid-svg-icons";
+import React, { useState, useEffect, useMemo } from "react";
+import { useHistory } from "react-router-dom";
 import FormContext from "../../contexts/FormContext";
 import ClockFormRow from "../ClockFormRow";
-import Icon from "../Icon";
+import Title from "../Title";
 import { encodeToUrl } from "../../utils/routes";
 import { DEFAULT_COLORS } from "../../data/colors";
 import "./ClockForm.css";
 
 /**
  * Form component for creating a new color clock.
- * 
+ *
  * Form validates whether the times are in strictly ascending order,
- * and all three times must be provided in order to submit. 
+ * and all three times must be provided in order to submit.
  * Upon successful form submit, the user is redirected to the
  * show page for the newly created clock.
- * 
+ *
  * Props: none
- * State: 
+ * State:
  *   - formData: {
  *       startTime: String,
  *       warningTime: String,
@@ -30,7 +29,7 @@ import "./ClockForm.css";
  *       warningTime: String,
  *       endTime: String,
  *     }
- * 
+ *
  */
 function ClockForm() {
   const history = useHistory();
@@ -48,6 +47,11 @@ function ClockForm() {
     warningTime: "",
     endTime: ""
   });
+
+  const colors = useMemo(
+    () => [formData.startColor, formData.warningColor, formData.endColor],
+    [formData.startColor, formData.warningColor, formData.endColor]
+  );
 
   useEffect(() => {
     const { startTime, warningTime, endTime } = formData;
@@ -73,11 +77,6 @@ function ClockForm() {
     e.preventDefault();
     const noErrors = Object.values(errors).every(err => err === "");
     if (noErrors) {
-      const colors = [
-        formData.startColor,
-        formData.warningColor,
-        formData.endColor
-      ];
       const times = [
         formData.startTime,
         formData.warningTime,
@@ -94,9 +93,7 @@ function ClockForm() {
   return (
     <FormContext.Provider value={{ handleChange, formData, errors }}>
       <div className="ClockForm">
-        <Link to="/about">
-          <Icon faIcon={faQuestion} />
-        </Link>
+        <Title colors={colors} />
         <form onSubmit={handleSubmit} className="ClockForm--form">
           <ClockFormRow
             prefix="start"
