@@ -1,0 +1,18 @@
+svg.Title--icon * {
+  fill: url(#clockgrad);
+}
+
+.Title--question {
+  position: absolute;
+  top: 2rem;
+  right: 0;
+}
+
+.Title--heading {
+  display: flex;
+  align-items: center;
+}
+
+.Title--heading svg {
+  margin: 0 2rem;
+}
