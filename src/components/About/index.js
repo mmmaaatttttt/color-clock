@@ -16,10 +16,9 @@ function About() {
     <div className="About">
       <h2>Make time visible.</h2>
       <p>
-        For folks who can't tell time and have a hard time with transitions
-        (e.g. small children), color clocks give a clear visual that tells them
-        how close they are to an upcoming transition. Time-telling skills not
-        required.
+        For folks who can't tell time or have a hard time with transitions (e.g.
+        small children), color clocks use clear visuals to tell people how much
+        time they have left for an activity. Time-telling skills not required.
       </p>
       <p>
         Color clocks smoothly transition between three different phases: start,
