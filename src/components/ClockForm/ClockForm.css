@@ -12,16 +12,6 @@
   padding: 0 20px;
 }
 
-@media (min-width: 80rem) {
-  .ClockForm--form {
-    width: 50%;
-  }
-
-  .ClockForm {
-    align-items: center;
-  }
-}
-
 .ClockForm--form input[type="time"] {
   -webkit-appearance: none;
   background-color: transparent;
@@ -49,4 +39,14 @@
 .ClockForm--button.button.hidden {
   pointer-events: none;
   opacity: 0;
+}
+
+@media (min-width: 80rem) {
+  .ClockForm--form {
+    width: 50%;
+  }
+
+  .ClockForm {
+    align-items: center;
+  }
 }

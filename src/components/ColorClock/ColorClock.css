@@ -8,6 +8,7 @@
   color: white;
   text-shadow: -0.1px -0.1px 1px #333, 0.1px -0.1px 1px #333,
     -0.1px 0.1px 1px #333, 0.1px 0.1px 1px #333;
+  text-align: center;
 }
 
 .ColorClock h1 {

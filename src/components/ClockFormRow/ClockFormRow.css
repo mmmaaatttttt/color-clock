@@ -14,12 +14,21 @@
   font-size: 1.2rem;
   font-style: italic;
   font-weight: bold;
-  position: absolute;
-  bottom: -5px;
-  right: 10px;
+  position: static;
+  display: block;
+  text-align: right;
+  margin-top: -1.5rem;
 }
 
 .ClockFormRow--heading {
   text-align: center;
   margin: 1.5rem 0 0.25rem;
+}
+
+@media (min-width: 40rem) {
+  .ClockFormRow.error .time span {
+    position: absolute;
+    bottom: -5px;
+    right: 10px;
+  }
 }
