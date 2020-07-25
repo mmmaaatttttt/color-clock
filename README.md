@@ -39,7 +39,7 @@ The `_redirects` ensures that the routing works as expected on production (see [
 
 ### Questions? Comments? Complaints?
 
-Feel free to reach out to me on [Twitter](twitter.com/mmmaaatttttt).
+Feel free to reach out to me on [Twitter](https://www.twitter.com/mmmaaatttttt).
 
 ### Shout-outs
 
