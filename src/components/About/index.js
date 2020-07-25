@@ -39,7 +39,7 @@ function About() {
         <li>
           Repeat steps 2 and 3 for the warning time and the ending time (colors
           default to <span style={{ backgroundColor: yellow }}>yellow</span> and{" "}
-          <span style={{ backgroundColor: red }}>red</span>, respectively.
+          <span style={{ backgroundColor: red }}>red</span>, respectively).
         </li>
         <li>Click on the button to create your clock.</li>
         <li>
