@@ -33,7 +33,7 @@ exports[`About basic tests matches snapshot 1`] = `
       <li>
         Select a color for the start time (defaults to 
         <span
-          class="green"
+          style="background-color: rgb(122, 231, 185);"
         >
           green
         </span>
@@ -42,17 +42,17 @@ exports[`About basic tests matches snapshot 1`] = `
       <li>
         Repeat steps 2 and 3 for the warning time and the ending time (colors default to 
         <span
-          class="yellow"
+          style="background-color: rgb(255, 236, 158);"
         >
           yellow
         </span>
          and 
         <span
-          class="red"
+          style="background-color: rgb(254, 173, 205);"
         >
           red
         </span>
-        , respectively.
+        , respectively).
       </li>
       <li>
         Click on the button to create your clock.

@@ -4,7 +4,7 @@ exports[`ColorClock component basic tests matches snapshot after the clock is ac
 <DocumentFragment>
   <div
     class="ColorClock"
-    style="background-color: rgb(255, 0, 0); box-shadow: rgb(255, 0, 0) 0 -5rem 10rem 5rem;"
+    style="background-color: rgb(254, 173, 205); box-shadow: rgb(254, 173, 205) 0 -5rem 10rem 5rem;"
   >
     <h1>
       Time's Up!
@@ -78,7 +78,7 @@ exports[`ColorClock component basic tests matches snapshot while the clock is ac
 <DocumentFragment>
   <div
     class="ColorClock ColorClock--active"
-    style="background-color: rgb(255, 255, 0); box-shadow: rgb(255, 255, 0) 0 -5rem 10rem 5rem;"
+    style="background-color: rgb(255, 236, 158); box-shadow: rgb(255, 236, 158) 0 -5rem 10rem 5rem;"
   >
     <div>
       <h1>
