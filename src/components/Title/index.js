@@ -7,6 +7,15 @@ import Icon from "../Icon";
 import { DEFAULT_COLORS } from "../../data/colors";
 import "./Title.css";
 
+/**
+ * Title of the app, which displays inside of ColorForm.
+ * The title icon uses a dynamic gradient which changes
+ * based on the colors in the form.
+ * 
+ * Props:
+ *   - colors: String[] - array of three hex codes
+ * State: none
+ */
 function Title({ colors = DEFAULT_COLORS }) {
   return (
     <div>
