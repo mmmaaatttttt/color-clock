@@ -15,9 +15,9 @@ import "./ColorClock.css";
 
 /**
  * Component for displaying the color clock.
- * 
+ *
  * Uses an effect to update the color and the progress bar every second.
- * 
+ *
  * Props:
  *   - times: String[] - array of three time strings
  *   - colors: String[] - array of three hex codes
@@ -52,8 +52,7 @@ function ColorClock({
   };
 
   const handleReset = () => {
-    const msg =
-      "Are you sure you want to go back? This action can't be undone.";
+    const msg = "Are you sure you want to go back?";
     if (window.confirm(msg)) {
       history.push("/");
     }
