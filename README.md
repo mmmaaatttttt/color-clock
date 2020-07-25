@@ -6,6 +6,8 @@ For folks who can't tell time or have a hard time with transitions (e.g.
 small children), color clocks use clear visuals to tell people how much
 time they have left for an activity. Time-telling skills not required.
 
+[Live site.](https://color-clock.mattlane.us)
+
 ### Getting started
 
 ```sh
