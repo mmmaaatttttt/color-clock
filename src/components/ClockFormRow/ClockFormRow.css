@@ -25,7 +25,7 @@
   margin: 1.5rem 0 0.25rem;
 }
 
-@media (min-width: 40rem) {
+@media (min-width: 60rem) {
   .ClockFormRow.error .time span {
     position: absolute;
     bottom: -5px;
