@@ -1,68 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Color Clock
 
-## Available Scripts
+Make time visible.
 
-In the project directory, you can run:
+For folks who can't tell time or have a hard time with transitions (e.g.
+small children), color clocks use clear visuals to tell people how much
+time they have left for an activity. Time-telling skills not required.
 
-### `npm start`
+### Getting started
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```sh
+npm i # install dependencies
+npm start # start dev server
+```
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Running Tests
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+```sh
+npm test
+```
 
 ### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+The app is currently set up to deploy to [Netlify](https://www.netlify.com/).
+The `_redirects` ensures that the routing works as expected on production (see [here](https://www.netlify.com/blog/2019/01/16/redirect-rules-for-all-how-to-configure-redirects-for-your-static-site/) for more information).
 
-### `npm run build` fails to minify
+### Features
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Single-page app built in [React.js](https://reactjs.org/)
+
+- Users can create a clock given a start time, end time, and warning time (along with corresponding colors).
+
+- The app implements a custom url encoder / decoder for the form data, so that
+  the data for any clock can be stored in the URL for bookmarking and daily use.
+
+- Invalid URLs are handled appropriately, and routing is controlled by [React Router](https://reactrouter.com/web/guides/quick-start)
+
+- So. much. testing.
+
+### Questions? Comments? Complaints?
+
+Feel free to reach out to me on [Twitter](twitter.com/mmmaaatttttt).
