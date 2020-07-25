@@ -40,3 +40,7 @@ The `_redirects` ensures that the routing works as expected on production (see [
 ### Questions? Comments? Complaints?
 
 Feel free to reach out to me on [Twitter](twitter.com/mmmaaatttttt).
+
+### Shout-outs
+
+All the students in Rithm's 16th cohort!
