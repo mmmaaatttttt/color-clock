@@ -42,4 +42,4 @@ function Title({ colors = DEFAULT_COLORS }) {
   );
 }
 
-export default Title;
+export default React.memo(Title);
